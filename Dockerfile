@@ -1,6 +1,6 @@
 FROM php:7.0.9-apache
 
-RUN wget -O - https://download.newrelic.com/548C16BF.gpg | sudo apt-key add - && \
+RUN wget -O - https://download.newrelic.com/548C16BF.gpg | apt-key add - && \
     echo "deb http://apt.newrelic.com/debian/ newrelic non-free" > /etc/apt/sources.list.d/newrelic.list && \
     echo newrelic-php5 newrelic-php5/application-name string "My App Name" | debconf-set-selections && \
     echo newrelic-php5 newrelic-php5/license-key string "YOUR_LICENSE_KEY" | debconf-set-selections && \
